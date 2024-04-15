@@ -3,6 +3,7 @@ package com.db_clinic.db_clinic.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.db_clinic.db_clinic.entity.Patient;
 import com.db_clinic.db_clinic.service.PatientService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping("/api/patients")
+@RequiredArgsConstructor
+@CrossOrigin("*")
 public class PatientController {
 
     @Autowired
@@ -49,7 +54,7 @@ public class PatientController {
         if (updatedPatient.getName() != null) {
             patient.setName(updatedPatient.getName());
         }
-        if (updatedPatient.getAge() != 0) {
+        if (updatedPatient.getAge() != null) {
             patient.setAge(updatedPatient.getAge());
         }
         if (updatedPatient.getGender() != null) {

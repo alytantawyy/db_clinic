@@ -3,6 +3,7 @@ package com.db_clinic.db_clinic.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.db_clinic.db_clinic.entity.Appointment;
 import com.db_clinic.db_clinic.service.AppointmentService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping("/api/appointments")
+@RequiredArgsConstructor
+@CrossOrigin("*")
 public class AppointmentController {
     
     @Autowired

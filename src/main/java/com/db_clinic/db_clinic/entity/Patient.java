@@ -21,7 +21,7 @@ public class Patient {
 
     private String name;
 
-    private int age;
+    private Integer age;
 
     private String gender;
 

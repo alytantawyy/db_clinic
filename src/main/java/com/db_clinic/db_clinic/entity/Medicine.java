@@ -20,9 +20,9 @@ public class Medicine {
 
     private String manufacturer;
 
-    private double price;
+    private Double price;
 
-    private int quantity;
+    private Integer quantity;
 
 }
     

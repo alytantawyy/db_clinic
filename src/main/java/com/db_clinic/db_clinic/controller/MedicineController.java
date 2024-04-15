@@ -3,16 +3,26 @@ package com.db_clinic.db_clinic.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.db_clinic.db_clinic.entity.Medicine;
 import com.db_clinic.db_clinic.service.MedicineService;
 
+import lombok.RequiredArgsConstructor;
+
+
+@RestController
+@RequestMapping("/api/medicines")
+@RequiredArgsConstructor
+@CrossOrigin("*")
 public class MedicineController {
 
     @Autowired
@@ -48,10 +58,10 @@ public class MedicineController {
         if (updatedMedicine.getManufacturer() != null) {
             medicine.setManufacturer(updatedMedicine.getManufacturer());
         }
-        if (updatedMedicine.getPrice() != 0) {
+        if (updatedMedicine.getPrice() != null) {
             medicine.setPrice(updatedMedicine.getPrice());
         }
-        if (updatedMedicine.getQuantity() != 0) {
+        if (updatedMedicine.getQuantity() != null) {
             medicine.setQuantity(updatedMedicine.getQuantity());
         }
 
