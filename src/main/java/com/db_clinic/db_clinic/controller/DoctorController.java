@@ -39,6 +39,9 @@ public class DoctorController {
 
     @PostMapping
     public Doctor createDoctor(@RequestBody Doctor doctor) {
+        if(doctor.getSalary() == null){
+            return doctorService.saveDoctor(doctor);
+        }
         return doctorService.saveDoctor(doctor);
     }
 
@@ -58,6 +61,12 @@ public class DoctorController {
         }
         if (updatedDoctor.getContactNumber() != null) {
             doctor.setContactNumber(updatedDoctor.getContactNumber());
+        }
+        if (updatedDoctor.getHourlyPay() != null) {
+            doctor.setHourlyPay(updatedDoctor.getHourlyPay());
+        }
+        if (updatedDoctor.getSalary() != null) {
+            doctor.setSalary(updatedDoctor.getSalary());
         }
 
         return doctorService.saveDoctor(doctor);

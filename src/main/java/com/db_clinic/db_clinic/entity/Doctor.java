@@ -24,6 +24,9 @@ public class Doctor {
     @Column(name = "contact_number")
     private String contactNumber;
 
-    
+    @Column(name = "hourly_pay")
+    private Double hourlyPay;
+
+    private Double salary;
 }
 
