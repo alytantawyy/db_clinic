@@ -3,6 +3,7 @@ package com.db_clinic.db_clinic.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,6 +44,7 @@ public class PatientController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public Patient updatePatient(@PathVariable Long id, @RequestBody Patient updatedPatient) {
         Patient patient = patientService.getPatientById(id);
         if (patient == null) {
@@ -70,6 +72,8 @@ public class PatientController {
         return patientService.savePatient(patient);
     }
 
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deletePatient(@PathVariable Long id) {
         patientService.deletePatient(id);

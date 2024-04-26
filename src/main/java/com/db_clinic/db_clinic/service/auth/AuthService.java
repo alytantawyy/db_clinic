@@ -5,4 +5,7 @@ import com.db_clinic.dto.UserDto;
 
 public interface AuthService {
     UserDto createcustomer(SignUpRequest signuprequest);
+
+
+    boolean hasCustomerWithEmail(String email);
 }
