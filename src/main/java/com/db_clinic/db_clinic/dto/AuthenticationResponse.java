@@ -1,4 +1,4 @@
-package com.db_clinic.dto;
+package com.db_clinic.db_clinic.dto;
 
 
 

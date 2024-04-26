@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.db_clinic.db_clinic.Utils.JWTUtil;
+import com.db_clinic.db_clinic.dto.AuthenticationRequest;
+import com.db_clinic.db_clinic.dto.AuthenticationResponse;
+import com.db_clinic.db_clinic.dto.SignUpRequest;
+import com.db_clinic.db_clinic.dto.UserDto;
 import com.db_clinic.db_clinic.repository.UserRepo;
 import com.db_clinic.db_clinic.service.auth.AuthService;
 import com.db_clinic.db_clinic.service.jwt.UserService;
-import com.db_clinic.dto.AuthenticationRequest;
-import com.db_clinic.dto.AuthenticationResponse;
-import com.db_clinic.dto.SignUpRequest;
-import com.db_clinic.dto.UserDto;
 import com.db_clinic.db_clinic.entity.User;
 
 

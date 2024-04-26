@@ -3,11 +3,11 @@ package com.db_clinic.db_clinic.service.auth;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.db_clinic.db_clinic.dto.SignUpRequest;
+import com.db_clinic.db_clinic.dto.UserDto;
 import com.db_clinic.db_clinic.entity.User;
 import com.db_clinic.db_clinic.enums.UserRole;
 import com.db_clinic.db_clinic.repository.UserRepo;
-import com.db_clinic.dto.SignUpRequest;
-import com.db_clinic.dto.UserDto;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
