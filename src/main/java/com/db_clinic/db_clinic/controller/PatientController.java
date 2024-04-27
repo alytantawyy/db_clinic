@@ -43,32 +43,33 @@ public class PatientController {
     }
 
     @PutMapping("/{id}")
-    public Patient updatePatient(@PathVariable Long id, @RequestBody Patient updatedPatient) {
-        Patient patient = patientService.getPatientById(id);
-        if (patient == null) {
-            // Handle patient not found
-            return null;
-        }
-
-        // Update patient attributes if provided in updatedPatient
-        if (updatedPatient.getName() != null) {
-            patient.setName(updatedPatient.getName());
-        }
-        if (updatedPatient.getAge() != null) {
-            patient.setAge(updatedPatient.getAge());
-        }
-        if (updatedPatient.getGender() != null) {
-            patient.setGender(updatedPatient.getGender());
-        }
-        if (updatedPatient.getContactNumber() != null) {
-            patient.setContactNumber(updatedPatient.getContactNumber());
-        }
-        if (updatedPatient.getDoctor() != null) {
-            patient.setDoctor(updatedPatient.getDoctor());
-        }
-
-        return patientService.savePatient(patient);
+public Patient updatePatient(@PathVariable Long id, @RequestBody Patient updatedPatient) {
+    Patient patient = patientService.getPatientById(id);
+    if (patient == null) {
+        // Handle patient not found
+        return null;
     }
+
+    // Update patient attributes if provided in updatedPatient
+    if (updatedPatient.getName() != null) {
+        patient.setName(updatedPatient.getName());
+    }
+    if (updatedPatient.getDob() != null) {
+        patient.setDob(updatedPatient.getDob());
+    }
+    if (updatedPatient.getGender() != null) {
+        patient.setGender(updatedPatient.getGender());
+    }
+    if (updatedPatient.getContactNumber() != null) {
+        patient.setContactNumber(updatedPatient.getContactNumber());
+    }
+    if (updatedPatient.getDoctor() != null) {
+        patient.setDoctor(updatedPatient.getDoctor());
+    }
+
+    return patientService.savePatient(patient);
+}
+
 
     @DeleteMapping("/{id}")
     public void deletePatient(@PathVariable Long id) {
