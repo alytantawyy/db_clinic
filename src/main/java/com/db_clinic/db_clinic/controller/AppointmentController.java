@@ -39,6 +39,9 @@ public class AppointmentController {
 
     @PostMapping
     public Appointment createAppointment(@RequestBody Appointment appointment) {
+        // Check appointment availability before creating
+        
+
         return appointmentService.saveAppointment(appointment);
     }
 

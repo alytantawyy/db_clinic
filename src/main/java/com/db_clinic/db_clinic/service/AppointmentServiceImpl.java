@@ -1,5 +1,6 @@
 package com.db_clinic.db_clinic.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +36,8 @@ public class AppointmentServiceImpl implements AppointmentService{
                 // Handle case where doctor does not exist
                 throw new IllegalArgumentException("Doctor with ID " + doctor.getDoctorId() + " does not exist");
             }
+
+          
         }
 
         // Check if patient with given ID exists
@@ -64,5 +67,7 @@ public class AppointmentServiceImpl implements AppointmentService{
     public void deleteAppointment(Long id) {
         appointmentRepository.deleteById(id);
     }
+
     
+
 }
